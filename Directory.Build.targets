@@ -24,11 +24,11 @@
         <PackageReference Update="Microsoft.Extensions.Caching.Redis" Version="9.0.0" />
         <PackageReference Update="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
         <PackageReference Update="Microsoft.Extensions.Configuration" Version="9.0.0" />
-        <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.3" />
+        <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
         <PackageReference Update="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3" />
         <PackageReference Update="Microsoft.Extensions.Http.Polly" Version="9.0.0"/>
         <PackageReference Update="Microsoft.Extensions.Azure" Version="1.6.3" />
-        <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.3" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.0" />
 
         <!-- Azure -->
         <PackageReference Update="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.4.0" />
@@ -77,7 +77,7 @@
         <!-- misc -->
         <PackageReference Update="Newtonsoft.Json" Version="12.0.2" />
         <PackageReference Update="MediatR" Version="12.4.1" />
-        <PackageReference Update="AutoMapper" Version="14.0.0" />
+        <PackageReference Update="AutoMapper" Version="16.1.1" />
         <PackageReference Update="Hellang.Middleware.ProblemDetails" Version="3.1.0" />
         <PackageReference Update="Acheve.Authentication.Events" Version="2.0.2" />
         <PackageReference Update="Swashbuckle.AspNetCore" Version="8.0.0" />
