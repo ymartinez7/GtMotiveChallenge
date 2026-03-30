@@ -89,16 +89,15 @@ namespace GtMotive.Estimate.Microservice.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Pay(
             Guid id,
-            PayBookingRequest request,
+            PaymentDetailRequest request,
             CancellationToken cancellationToken)
         {
             _logger.LogInformation(
-                $"Entering Post. Booking: {id} Request: {@request}",
+                $"Entering Post. Booking: {id} will be paid",
                 request);
 
             ArgumentNullException.ThrowIfNull(request);
-            request.Id = id;
-            var presenter = await _sender.Send(request, cancellationToken);
+            var presenter = await _sender.Send(new PayBookingRequest { Id = id, PaymentDetails = request }, cancellationToken);
             return presenter.ActionResult;
         }
 
@@ -116,16 +115,15 @@ namespace GtMotive.Estimate.Microservice.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Finish(
             Guid id,
-            FinishBookingRequest request,
+            ObservationRequest request,
             CancellationToken cancellationToken)
         {
             _logger.LogInformation(
-                $"Entering Post. Booking: {id} Request: {@request}",
+                $"Entering Post. Booking: {id} will be finished",
                 request);
 
             ArgumentNullException.ThrowIfNull(request);
-            request.Id = id;
-            var presenter = await _sender.Send(request, cancellationToken);
+            var presenter = await _sender.Send(new FinishBookingRequest { Id = id, Observations = request.Observations }, cancellationToken);
             return presenter.ActionResult;
         }
 
@@ -143,16 +141,16 @@ namespace GtMotive.Estimate.Microservice.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Cancel(
             Guid id,
-            CancelBookingRequest request,
+            ObservationRequest request,
             CancellationToken cancellationToken)
         {
             _logger.LogInformation(
-                $"Entering Post. Booking: {id} Request: {@request}",
+                $"Entering Post. Booking: {id} will be cancelled",
                 request);
 
             ArgumentNullException.ThrowIfNull(request);
-            request.Id = id;
-            var presenter = await _sender.Send(request, cancellationToken);
+
+            var presenter = await _sender.Send(new CancelBookingRequest { Id = id, Observations = request.Observations }, cancellationToken);
             return presenter.ActionResult;
         }
     }
