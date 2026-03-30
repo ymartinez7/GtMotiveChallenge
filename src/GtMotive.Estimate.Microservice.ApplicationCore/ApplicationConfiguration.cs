@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using GtMotive.Estimate.Microservice.ApplicationCore.EventHandlers;
+using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Bookings.Cancel;
+using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Bookings.Finish;
+using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Bookings.GetDetails;
+using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Bookings.MakeNew;
+using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Bookings.Pay;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.Find;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.List;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.Register;
@@ -28,6 +33,13 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore
             services.AddScoped<IListVehiclesUseCase, ListVehiclesUseCase>();
             services.AddScoped<IRegisterVehicleUseCase, RegisterVehicleUseCase>();
 
+            // Bookings use cases
+            services.AddScoped<IMakeNewBookingUseCase, MakeNewBookingUseCase>();
+            services.AddScoped<IGetBookingDetailsUseCase, GetBookingDetailsUseCase>();
+            services.AddScoped<IPayBookingUseCase, PayBookingUseCase>();
+            services.AddScoped<ICancelBookingUseCase, CancelBookingUseCase>();
+            services.AddScoped<IFinishBookingUseCase, FinishBookingUseCase>();
+
             return services;
         }
 
@@ -39,6 +51,10 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore
         public static IServiceCollection AddEventHandlers(this IServiceCollection services)
         {
             services.AddSingleton(new VehicleAddedEventHandler());
+            services.AddSingleton(new BookingCreatedEventHandler());
+            services.AddSingleton(new BookingConfirmedEventHandler());
+            services.AddSingleton(new BookingCanceledEventHandler());
+            services.AddSingleton(new BookingFinishedEventHandler());
 
             return services;
         }

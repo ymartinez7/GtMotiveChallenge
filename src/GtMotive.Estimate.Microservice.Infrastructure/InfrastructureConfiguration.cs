@@ -58,6 +58,8 @@ namespace GtMotive.Estimate.Microservice.Infrastructure
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IVehicleRepository, VehicleRepository>();
+            services.AddScoped<IBookingRepository, BookingRepository>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
         }
 
         public static void AddRedisCaching(this IServiceCollection services, IConfiguration configuration)

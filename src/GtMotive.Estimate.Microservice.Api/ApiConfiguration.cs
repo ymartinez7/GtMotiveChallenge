@@ -48,6 +48,7 @@ namespace GtMotive.Estimate.Microservice.Api
         public static void AddServices(this IServiceCollection services)
         {
             services.AddScoped<IVehicleService, VehicleService>();
+            services.AddScoped<IBookingService, BookingService>();
         }
     }
 }
