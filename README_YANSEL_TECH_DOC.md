@@ -92,7 +92,7 @@ GET /api/Vehicles
 >    "id": "a7253349-1463-4589-827b-2436ad9f0f74",
 >    "vsn": "PKA-987",
 >    "modelName": "Picanto",
->    "modelYear": 2021,
+>    "modelYear": 2022,
 >    "price": 38.6,
 >    "currency": "EUR"
 >  },
@@ -100,7 +100,7 @@ GET /api/Vehicles
 >    "id": "9e36f048-021d-4d7c-8cd6-9185ec6c5d18",
 >    "vsn": "AAA-123",
 >    "modelName": "Qashqai",
->    "modelYear": 2022,
+>    "modelYear": 2023,
 >    "price": 50,
 >    "currency": "EUR"
 >  }
@@ -121,7 +121,7 @@ GET /api/Vehicles/9E36F048-021D-4D7C-8CD6-9185EC6C5D18
   "id": "a7253349-1463-4589-827b-2436ad9f0f74",
   "vsn": "PKA-987",
   "modelName": "Picanto",
-  "modelYear": 2021,
+  "modelYear": 2022,
   "price": 38.6,
   "currency": "EUR"
 }
@@ -145,7 +145,7 @@ POST /api/Vehicles
   "vsn": "AAA-123",
   "modelBrand": "Kia",
   "modelName": "Picanto",
-  "modelYear": 2019,
+  "modelYear": 2022,
   "price": 38.60,
   "currency": "EUR"
 }
@@ -367,7 +367,6 @@ PUT /api/Bookings/11F5015F-328B-49AA-9E7A-243055E4C6B5/Pay
 ```
 ```json
 {
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "paymentDetails": {
     "paymentype": "CreditCard",
     "cardNumber": 12365479,
