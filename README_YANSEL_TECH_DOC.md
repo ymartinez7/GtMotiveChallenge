@@ -221,8 +221,8 @@ GET /api/Bookings/11F5015F-328B-49AA-9E7A-243055E4C6B5
   "id": "11f5015f-328b-49aa-9e7a-243055e4c6b5",
   "vehicleId": "61064784-c820-4857-979d-9844b010eade",
   "userId": "c46443c2-f0de-4985-a3a5-c5413c802b8f",
-  "startDate": "2026-03-10",
-  "endDate": "2026-03-15",
+  "startDate": "2026-04-10",
+  "endDate": "2026-04-15",
   "totalPrice": 193,
   "status": "Pending"
 }
@@ -242,8 +242,8 @@ POST /api/Bookings
 {
   "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "vehicleId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "startDate": "2026-03-10",
-  "endDate": "2026-03-15"
+  "startDate": "2026-04-10",
+  "endDate": "2026-04-15"
 }
 ```
 **Response** 
@@ -262,8 +262,8 @@ POST /api/Bookings
 {
   "userId": "C46443C2-F0DE-4985-A3A5-C5413C802B8F",
   "vehicleId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "startDate": "2026-03-10",
-  "endDate": "2026-03-15"
+  "startDate": "2026-04-10",
+  "endDate": "2026-04-15"
 }
 ```
 **Response** 
@@ -282,8 +282,8 @@ POST /api/Bookings
 {
   "userId": "C46443C2-F0DE-4985-A3A5-C5413C802B8F",
   "vehicleId": "2283F042-882B-49AA-9EBA-2730F16D1F49",
-  "startDate": "2026-03-16",
-  "endDate": "2026-03-15"
+  "startDate": "2026-04-16",
+  "endDate": "2026-04-15"
 }
 ```
 **Response** 
@@ -300,8 +300,8 @@ POST /api/Bookings
 {
   "userId": "C46443C2-F0DE-4985-A3A5-C5413C802B8F",
   "vehicleId": "2283F042-882B-49AA-9EBA-2730F16D1F49",
-  "startDate": "2026-03-15",
-  "endDate": "2026-03-15"
+  "startDate": "2026-04-15",
+  "endDate": "2026-04-15"
 }
 ```
 **Response** 
@@ -320,8 +320,8 @@ POST /api/Bookings
 {
   "userId": "C46443C2-F0DE-4985-A3A5-C5413C802B8F",
   "vehicleId": "ce066d33-98d2-42ae-9da9-ac17a78e7ad9",
-  "startDate": "2026-03-20",
-  "endDate": "2026-03-30"
+  "startDate": "2026-04-20",
+  "endDate": "2026-04-30"
 }
 ```
 **Response** 
@@ -340,8 +340,8 @@ POST /api/Bookings
 {
   "userId": "C46443C2-F0DE-4985-A3A5-C5413C802B8F",
   "vehicleId": "61064784-C820-4857-979D-9844B010EADE",
-  "startDate": "2026-03-10",
-  "endDate": "2026-03-15"
+  "startDate": "2026-04-10",
+  "endDate": "2026-04-15"
 }
 ```
 **Response** 
@@ -350,8 +350,8 @@ POST /api/Bookings
   "id": "11f5015f-328b-49aa-9e7a-243055e4c6b5",
   "vehicleId": "61064784-c820-4857-979d-9844b010eade",
   "userId": "c46443c2-f0de-4985-a3a5-c5413c802b8f",
-  "startDate": "2026-03-10",
-  "endDate": "2026-03-15",
+  "startDate": "2026-04-10",
+  "endDate": "2026-04-15",
   "totalPrice": 193,
   "status": "Pending"
 }
@@ -385,8 +385,8 @@ PUT /api/Bookings/11F5015F-328B-49AA-9E7A-243055E4C6B5/Pay
   "id": "11f5015f-328b-49aa-9e7a-243055e4c6b5",
   "vehicleId": "61064784-c820-4857-979d-9844b010eade",
   "userId": "c46443c2-f0de-4985-a3a5-c5413c802b8f",
-  "startDate": "2026-03-10",
-  "endDate": "2026-03-15",
+  "startDate": "2026-04-10",
+  "endDate": "2026-04-15",
   "totalPrice": 193,
   "status": "Confirmed"
 }
@@ -447,34 +447,30 @@ Las tablas son `users`, `vehicles`, `bookings` y `payments`.
 
 **Users**
 
-| Id                                   | FirstName | LastName  | Email                        |
-|--------------------------------------|-----------|-----------|------------------------------|
-| 8AADFDF1-58AD-4AD9-B029-5C5529D02A56 | Test      | User      | TestUser@test.com           |
-| C46443C2-F0DE-4985-A3A5-C5413C802B8F | Yansel    | Martínez  | YanselMartinez@test.com     |
+| Id                                   | FirstName | LastName | Email                     |
+|--------------------------------------|----------|----------|---------------------------|
+| C9F678D9-49DA-404A-BB7C-4E8B20DE4F73 | Yansel   | Martinez | YanselMartinez@test.com   |
+| 64032919-E9E5-48FD-8352-E2CEDB890E0D | Test     | User     | TestUser@test.com         |
 
 **Vehicles**
 
-| Id                                   | Model_Name | Model_Year | Vpn     | Price_Amount | Price_Currency | LastBookedOnUtc           | Model_Brand |
-|--------------------------------------|------------|------------|---------|--------------|----------------|---------------------------|-------------|
-| A7253349-1463-4589-827B-2436AD9F0F74 | Picanto    | 2021       | PKA-987 | 38.60        | EUR            | 0001-01-01 00:00:00.0000000 | Kia         |
-| 9E36F048-021D-4D7C-8CD6-9185EC6C5D18 | Qashqai    | 2022       | AAA-123 | 50.00        | EUR            | 0001-01-01 00:00:00.0000000 | Nisan       |
-
+| Id                                   | Model_Brand | Model_Name | Model_Year | Vpn     | Price_Amount | Price_Currency | LastBookedOnUtc               |
+|--------------------------------------|------------|-----------|-----------|---------|--------------|----------------|-------------------------------|
+| 2E59C712-26D9-497A-A048-2A69E35247FF | Nisan      | Qasqai    | 2023      | BBB-987 | 50.00        | EUR            | 2026-03-30 16:44:30.9576383  |
+| F01D9008-3557-468B-BB86-64D18CA5ED85 | Toyota     | Rav4      | 2026      | CCC-567 | 100.00       | EUR            | 2026-03-30 16:46:13.4039575  |
 
 **Bookings**
 
-| Id                                   | VehicleId                             | UserId                                | Duration_StartDate | Duration_EndDate | PriceForPeriod_Amount | PriceForPeriod_Currency | TotalPrice_Amount | TotalPrice_Currency | Status | CreatedOnUtc               | FinishedOnUtc              | CanceledOnUtc              | ConfirmeddOnUtc            |
-|--------------------------------------|---------------------------------------|---------------------------------------|--------------------|------------------|-----------------------|--------------------------|-------------------|---------------------|--------|----------------------------|----------------------------|----------------------------|----------------------------|
-| 11F5015F-328B-49AA-9E7A-243055E4C6B5 | 61064784-C820-4857-979D-9844B010EADE | C46443C2-F0DE-4985-A3A5-C5413C802B8F | 2026-03-10         | 2026-03-15       | 193.00                | EUR                      | 193.00            | EUR                 | 3      | 2026-03-09 19:29:19.9565209 | 2026-03-09 19:52:06.7638161 | NULL                       | 2026-03-09 19:45:34.4793113 |
-| 176E6BF0-130C-4F8C-B576-94432DC5D5AF | CE066D33-98D2-42AE-9DA9-AC17A78E7AD9 | 8AADFDF1-58AD-4AD9-B029-5C5529D02A56 | 2026-03-20         | 2026-03-30       | 500.00                | EUR                      | 500.00            | EUR                 | 2      | 2026-03-09 19:50:34.7008919 | NULL                       | 2026-03-09 19:53:19.2656661 | NULL                       |
-
+| Id                                   | VehicleId                             | UserId                                | Duration_StartDate | Duration_EndDate | PriceForPeriod_Amount | PriceForPeriod_Currency | TotalPrice_Amount | TotalPrice_Currency | Status | CreatedOnUtc                  | ConfirmeddOnUtc               | FinishedOnUtc                | CanceledOnUtc                  |
+|--------------------------------------|--------------------------------------|--------------------------------------|------------------|-----------------|---------------------|------------------------|-----------------|-------------------|--------|-------------------------------|-------------------------------|------------------------------|--------------------------------|
+| 107E404F-4BBF-4C6C-B99D-441B6E27E940 | 2E59C712-26D9-497A-A048-2A69E35247FF | C9F678D9-49DA-404A-BB7C-4E8B20DE4F73 | 2026-04-10       | 2026-04-15      | 250.00              | EUR                    | 250.00          | EUR               | 2      | 2026-03-30 16:44:30.9576383  | NULL                          | NULL                         | 2026-03-30 16:46:00.6027106  |
+| 3DEA3C53-FE4E-47BF-B90B-D95C91069C3F | F01D9008-3557-468B-BB86-64D18CA5ED85 | C9F678D9-49DA-404A-BB7C-4E8B20DE4F73 | 2026-04-20       | 2026-04-25      | 500.00              | EUR                    | 500.00          | EUR               | 3      | 2026-03-30 16:46:13.4039575  | 2026-03-30 16:47:12.9524442  | 2026-03-30 16:47:47.0630070 | NULL                           |
 
 **Payments**
 
-| Id                                   | BookingId                             | PaymentType | PaidOnUtc                  |
-|--------------------------------------|---------------------------------------|-------------|----------------------------|
-| 6329D9F2-2F6F-4480-B8C4-B5565004B04C | 11F5015F-328B-49AA-9E7A-243055E4C6B5 | 0           | 2026-03-09 19:45:34.4796139 |
-
-
+| Id                                   | BookingId                             | Paymentype | PaidOnUtc                     |
+|--------------------------------------|--------------------------------------|------------|-------------------------------|
+| B46DBB32-9D52-4BDD-A694-70D3BE47DA05 | 3DEA3C53-FE4E-47BF-B90B-D95C91069C3F | 0          | 2026-03-30 16:47:12.9527292  |
 
 ## Testing
 ### Prueba unitaria
