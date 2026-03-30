@@ -39,7 +39,7 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.Regis
             try
             {
                 var vehicle = await _vehicleService.RegisterAsync(
-                    input.Vsn,
+                    input.Vpn,
                     input.ModelBrand,
                     input.ModelName,
                     input.ModelYear,

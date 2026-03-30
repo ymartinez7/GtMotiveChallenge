@@ -6,13 +6,13 @@
     /// <remarks>
     /// Initializes a new instance of the <see cref="RegisterVehicleInput"/> class.
     /// </remarks>
-    /// <param name="vsn">vsn.</param>
+    /// <param name="vpn">vsn.</param>
     /// <param name="modelBrand">modelBrand.</param>
     /// <param name="modelName">modelName.</param>
     /// <param name="modelYear">modelYear.</param>
     /// <param name="price">price.</param>
     /// <param name="currency">currency.</param>
-    public class RegisterVehicleInput(string vsn,
+    public class RegisterVehicleInput(string vpn,
         string modelBrand,
         string modelName,
         int modelYear,
@@ -22,7 +22,7 @@
         /// <summary>
         /// Gets Vsn.
         /// </summary>
-        public string Vsn { get; private set; } = vsn;
+        public string Vpn { get; private set; } = vpn;
 
         /// <summary>
         /// Gets ModelBrand.

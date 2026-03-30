@@ -25,7 +25,7 @@ namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Register
             _logger.LogInformation("Executing RegisterVehicleRequestHandler");
 
             var input = new RegisterVehicleInput(
-                request.Vps,
+                request.Vpn,
                 request.ModelBrand,
                 request.ModelName,
                 request.ModelYear,
