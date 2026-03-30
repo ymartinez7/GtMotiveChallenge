@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using GtMotive.Estimate.Microservice.ApplicationCore.EventHandlers;
+using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.Find;
+using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.List;
+using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.Register;
 using Microsoft.Extensions.DependencyInjection;
 
 [assembly: CLSCompliant(false)]
@@ -19,6 +23,23 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore
         /// <returns>The modified instance.</returns>
         public static IServiceCollection AddUseCases(this IServiceCollection services)
         {
+            // Vehicles use cases
+            services.AddScoped<IGetVehicleUseCase, GetVehicleUseCase>();
+            services.AddScoped<IListVehiclesUseCase, ListVehiclesUseCase>();
+            services.AddScoped<IRegisterVehicleUseCase, RegisterVehicleUseCase>();
+
+            return services;
+        }
+
+        /// <summary>
+        /// AddEventHandlers.
+        /// </summary>
+        /// <param name="services">services.</param>
+        /// <returns>IServiceCollection.</returns>
+        public static IServiceCollection AddEventHandlers(this IServiceCollection services)
+        {
+            services.AddSingleton(new VehicleAddedEventHandler());
+
             return services;
         }
     }

@@ -5,6 +5,8 @@ using GtMotive.Estimate.Microservice.Api.Authorization;
 using GtMotive.Estimate.Microservice.Api.DependencyInjection;
 using GtMotive.Estimate.Microservice.Api.Filters;
 using GtMotive.Estimate.Microservice.ApplicationCore;
+using GtMotive.Estimate.Microservice.Domain.Interfaces.Services;
+using GtMotive.Estimate.Microservice.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -39,6 +41,13 @@ namespace GtMotive.Estimate.Microservice.Api
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ApiConfiguration).GetTypeInfo().Assembly));
             services.AddUseCases();
             services.AddPresenters();
+            services.AddServices();
+            services.AddEventHandlers();
+        }
+
+        public static void AddServices(this IServiceCollection services)
+        {
+            services.AddScoped<IVehicleService, VehicleService>();
         }
     }
 }

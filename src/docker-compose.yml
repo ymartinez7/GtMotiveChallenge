@@ -6,6 +6,7 @@ services:
       dockerfile: GtMotive.Estimate.Microservice.Host/Dockerfile
     depends_on:
       - gtmotive.estimate.microservice.sqlserverdb
+      - gtmotive.estimate.microservice.rediscache
 
   gtmotive.estimate.microservice.sqlserverdb:
     image: mcr.microsoft.com/mssql/server:latest
@@ -17,8 +18,26 @@ services:
     volumes:
       - dbdata:/var/opt/mssql
 
+  gtmotive.estimate.microservice.rediscache:
+     image: redis:latest
+     restart: always
+     ports:
+       - '6379:6379'
+     volumes:
+       - redis_volume_data:/data
+
+  gtmotive.estimate.microservice.redisinsight:
+    image: redislabs/redisinsight:1.14.0
+    restart: always
+    ports:
+      - "8001:8001"
+    volumes:
+       - redis_insight_data:/db
+
 volumes:
   dbdata:
+  redis_volume_data:
+  redis_insight_data:
 
 
 

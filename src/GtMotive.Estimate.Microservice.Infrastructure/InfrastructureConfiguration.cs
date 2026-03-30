@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using GtMotive.Estimate.Microservice.Domain.Interfaces;
+using GtMotive.Estimate.Microservice.Domain.Interfaces.Repositories;
+using GtMotive.Estimate.Microservice.Infrastructure.Caching;
 using GtMotive.Estimate.Microservice.Infrastructure.Data.Context;
+using GtMotive.Estimate.Microservice.Infrastructure.Data.Repositories;
 using GtMotive.Estimate.Microservice.Infrastructure.Interfaces;
 using GtMotive.Estimate.Microservice.Infrastructure.Logging;
 using GtMotive.Estimate.Microservice.Infrastructure.Telemetry;
@@ -50,6 +53,21 @@ namespace GtMotive.Estimate.Microservice.Infrastructure
             {
                 options.UseSqlServer(connectionString);
             });
+
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
+        }
+
+        public static void AddRedisCaching(this IServiceCollection services, IConfiguration configuration)
+        {
+            var connectionString =
+                configuration.GetConnectionString("Cache") ??
+                throw new ArgumentNullException(nameof(configuration));
+
+            services.AddStackExchangeRedisCache(options => options.Configuration = connectionString);
+            services.AddSingleton<ICache, RedisCacheService>();
         }
 
         private sealed class InfrastructureBuilder(IServiceCollection services) : IInfrastructureBuilder

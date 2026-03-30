@@ -68,6 +68,7 @@ builder.Services.AddControllers(ApiConfiguration.ConfigureControllers)
 
 builder.Services.AddBaseInfrastructure(builder.Environment.IsDevelopment());
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddRedisCaching(builder.Configuration);
 
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {

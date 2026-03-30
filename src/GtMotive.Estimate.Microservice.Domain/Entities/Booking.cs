@@ -109,6 +109,11 @@ namespace GtMotive.Estimate.Microservice.Domain.Entities
         public virtual Vehicle Vehicle { get; set; }
 
         /// <summary>
+        /// Gets or sets Payments.
+        /// </summary>
+        public virtual Payment Payment { get; set; }
+
+        /// <summary>
         /// Create an instance of Booking.
         /// </summary>
         /// <param name="vehicle">vehicle.</param>
