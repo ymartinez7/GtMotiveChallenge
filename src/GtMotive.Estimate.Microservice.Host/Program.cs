@@ -7,6 +7,7 @@ using Azure.Security.KeyVault.Secrets;
 using GtMotive.Estimate.Microservice.Api;
 using GtMotive.Estimate.Microservice.Host.Configuration;
 using GtMotive.Estimate.Microservice.Host.DependencyInjection;
+using GtMotive.Estimate.Microservice.Host.Extensions;
 using GtMotive.Estimate.Microservice.Infrastructure;
 using GtMotive.Estimate.Microservice.Infrastructure.MongoDb.Settings;
 using IdentityServer4.AccessTokenValidation;
@@ -66,6 +67,7 @@ builder.Services.AddControllers(ApiConfiguration.ConfigureControllers)
     .WithApiControllers();
 
 builder.Services.AddBaseInfrastructure(builder.Environment.IsDevelopment());
+builder.Services.AddPersistence(builder.Configuration);
 
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
@@ -133,6 +135,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
+app.ApplyMigration();
 app.UseSwaggerInApplication(pathBase, builder.Configuration);
 app.UseRouting();
 app.UseAuthentication();

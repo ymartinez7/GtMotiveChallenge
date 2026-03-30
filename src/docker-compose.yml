@@ -4,3 +4,21 @@ services:
     build:
       context: .
       dockerfile: GtMotive.Estimate.Microservice.Host/Dockerfile
+    depends_on:
+      - gtmotive.estimate.microservice.sqlserverdb
+
+  gtmotive.estimate.microservice.sqlserverdb:
+    image: mcr.microsoft.com/mssql/server:latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: NuevaContra123#
+    ports:
+      - "1433:1433"
+    volumes:
+      - dbdata:/var/opt/mssql
+
+volumes:
+  dbdata:
+
+
+
