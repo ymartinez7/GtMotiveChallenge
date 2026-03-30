@@ -539,9 +539,8 @@ No implementadas en la solución, dado que, no entendí muy bien la estructura b
 No implementadas en la solución, dado que, no entendí muy bien la estructura base que hay que usar para la implementar la prueba.
 
 ### Mejoras a la aplicación
-- Agregar autenticación y auitorización en los controladores para impedir el acceso anónimo o no pemritido
+- Agregar autenticación y autorización en los controladores para impedir el acceso anónimo o no autorizado.
 - Una vez hecho lo anterior, obtener dinámicamente el ID del usuario directamente del token en lugar de enviarlo en la request para realizar una reserva.
 - Usar fluent validation para realizar validaciones también en la entrada del api.
 - Implementar el paginado, filtrado y ordenamiento en el endpoint que devuelve de la lista de vehiculos.
-- Usar autoMapper para los mapeaos entre clases (Request, input, response, etc).
-- Implementart los tests funcionales y de infraestructura.
+- Implementar los tests funcionales y de infraestructura.
